@@ -4,10 +4,10 @@
     Add them up!
 {% endblock subtitle %}
 {% block content %}
-    <p>Total : <span id="total">FILL ME</span></p>
+    <p>Total : <span id="total">{{ session.total }}</span></p>
     <form method="post">
-    <label for="number">Number: </label>
-    <input type="number" id="number" name="number">
-    <input type="submit", value="Add It!">
+        <label for="number">Number: </label>
+        <input type="number" id="number" name="number">
+        <input type="submit" , value="Add It!">
     </form>
 {% endblock content %}
