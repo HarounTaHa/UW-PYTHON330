@@ -10,4 +10,7 @@
         <input type="number" id="number" name="number">
         <input type="submit" , value="Add It!">
     </form>
+    <form method="POST" action="{{ url_for('save') }}">
+        <input type="submit" value="Save It">
+    </form>
 {% endblock content %}
