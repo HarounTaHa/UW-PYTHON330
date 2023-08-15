@@ -1,0 +1,14 @@
+{% extends 'base.jinja2' %}
+{% block subtitle %}
+    Retrieve Total
+{% endblock subtitle %}
+{% block content %}
+    <form method="GET">
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <label for="code">Code: </label>
+        <input type="text" id="code" name="code">
+        <input type="submit" value="Retrieve it!">
+    </form>
+{% endblock content %}

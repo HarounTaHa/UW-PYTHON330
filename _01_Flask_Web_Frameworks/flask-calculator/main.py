@@ -29,6 +29,21 @@ def save():
     return render_template('save.jinja2', code=code)
 
 
+@app.route('/retrieve')
+def retrieve():
+    code = request.args.get("code", None)
+
+    if code is None:
+        return render_template('retrieve.jinja2')
+    else:
+        try:
+            saved_total = SavedTotal.get(SavedTotal.code == code)
+        except SavedTotal.DoesNotExist:
+            return render_template('retrieve.jinja2', error="Code not dound")
+        session['total'] = saved_total.value
+        return redirect(url_for('add'))
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5000"))
     app.run(host='0.0.0.0', port=port, debug=True)
