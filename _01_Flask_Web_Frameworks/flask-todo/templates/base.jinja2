@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>My Todo List</title>
+</head>
+<body>
+{#    <nav>#}
+{#        <a id='#' href="{{ url_for('#') }}">Fill Me</a>#}
+{#    </nav>#}
+
+    <h1>
+        My Todo List
+    </h1>
+    <h2>
+        {% block subtitle %}
+        {% endblock subtitle %}
+    </h2>
+        {% block content %}
+        {% endblock content %}
+</body>
+</html>
